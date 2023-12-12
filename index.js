@@ -1,4 +1,4 @@
-import {LLM} from "/llmjs/llm.js";
+import {LLM} from "./llmjs/llm.js";
 
 // Constants
 const MODEL_URL = 'https://huggingface.co/RZakovich/tableau_calc_assistant/resolve/main/model-15k.gguf';
