@@ -1,0 +1,15 @@
+{
+  "name": "tiny-llm-browser",
+  "version": "1.0.0",
+  "description": "This repository contains example code for ggml.js library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -p 8080"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}

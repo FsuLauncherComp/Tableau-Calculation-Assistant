@@ -1,0 +1,10 @@
+node_modules/
+debug.*
+package-lock.json
+prompts.txt
+.DS_Store
+model.bin
+tokenizer.bin
+emsdk/
+llm.js/
+dist/*.gguf

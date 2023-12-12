@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TableauCalcLLM</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"
+    integrity="sha512-LhccdVNGe2QMEfI3x4DVV3ckMRe36TfydKss6mJpdHjNFiV07dFpS2xzeZedptKZrwxfICJpez09iNioiSZ3hA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+  <div>
+    <h2 id="mainTitle">Tableau Calculation Assistant</h2>
+    <div id="bestPractices">
+      <strong>Expect wrong/strange answers</strong>
+      <br />
+      - This is a prototype and POC for demo purposes.
+      <br />
+      - It'll keep getting better over time.
+      <br />
+      <br />
+      <strong>Best Practices:</strong>
+      <br />
+      - Ask a question in plain English.
+      <br />
+      - Make your question/insturction relevant to Tableau calculations.
+      <br />
+      - If you want to reference fields from your dataset, use the field name in brackets. For example, [Sales] or
+      [Profit Ratio].
+      <br />
+      <br />
+      <strong>Limitations:</strong>
+      <br />
+      - Model is still being tuned. Expect incorrect/strange results.
+      <br />
+      - Model can produce different results for the same prompt. Try re-running the model if you get an unexpected
+      result.
+      </p>
+    </div>
+    <progress value="0" max="500" id="progress" hidden="1"></progress>
+    <form id="promptInput" onsubmit="event.preventDefault();">
+      <label for="textInput">What would you like to know?</label>
+      <textarea id="textInput" name="textInput"
+        rows="5">Explain Table Calculations.</textarea>
+      <div id="submitGrid">
+        <button id="submitBtn" disabled>Loading Model...</button>
+        <div id="spinner" style="display:none;"><i class="fas fa-spinner fa-spin"></i> Processing...</div>
+      </div>
+    </form>
+    <div id="result" style="display:none;">
+      <label for="output">Response</label>
+      <!-- Flex grow the output -->
+      <div id="output"></div>
+    </div>
+  </div>
+  <!-- Load index.js script -->
+  <script src="index.js" type="module"></script>
+</body>
+
+</html>
