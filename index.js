@@ -1,7 +1,7 @@
 import {LLM} from "./llmjs/llm.js";
 
 // Constants
-const MODEL_URL = 'https://huggingface.co/RZakovich/tableau_calc_assistant/resolve/main/model-15k.gguf';
+const MODEL_URL = './model.gguf';
 
 // UI Elements
 const submitButton = document.getElementById('submitBtn');
@@ -71,7 +71,8 @@ const run_model = () => {
     app.run({
         prompt: cleanedText,
         max_token_len: 512,
-        reverse_prompt: "<|endoftext|>"
+        reverse_prompt: "<|endoftext|>",
+        temp: 0.7
     });
 }
 
